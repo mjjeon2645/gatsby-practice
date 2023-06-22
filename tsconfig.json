@@ -108,6 +108,6 @@
       "esnext"
     ],                                        /* Specify a set of bundled library declaration files that describe the target runtime environment. */
   },
-  "include": ["src/**/*.tsx"],
+  "include": ["src/**/*.tsx", "src/**/*.ts"],
   "exclude": ["node_modules"]
 }
