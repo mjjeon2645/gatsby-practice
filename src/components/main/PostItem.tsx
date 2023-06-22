@@ -2,14 +2,10 @@ import { Link } from 'gatsby';
 
 import styled from 'styled-components';
 
-type PostItemProps = {
-  title: string
-  date: string
-  categories: string[]
-  summary: string
-  thumbnail: string
-  link: string
-}
+import { GatsbyImage } from 'gatsby-plugin-image';
+import { PostFrontmatterType } from '../../types';
+
+type PostItemProps = PostFrontmatterType & { link: string }
 
 const PostItemWrapper = styled(Link)`
   display: flex;
@@ -24,11 +20,10 @@ const PostItemWrapper = styled(Link)`
   }
 `;
 
-const Thumbnail = styled.img`
+const Thumbnail = styled(GatsbyImage)`
   width: 100%;
   height: 200px;
   border-radius: 10px 10px 0 0;
-  object-fit: cover;
 `;
 
 const Content = styled.div`
@@ -92,12 +87,14 @@ export default function PostItem({
   date,
   categories,
   summary,
-  thumbnail,
+  thumbnail: {
+    childImageSharp: { gatsbyImageData },
+  },
   link,
 }: PostItemProps) {
   return (
     <PostItemWrapper to={link}>
-      <Thumbnail src={thumbnail} alt="Post Item Image" />
+      <Thumbnail image={gatsbyImageData} alt="Post Item Image" />
       <Content>
         <Title>{title}</Title>
         <Date>{date}</Date>
