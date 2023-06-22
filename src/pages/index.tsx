@@ -1,7 +1,12 @@
+import { Link } from 'gatsby';
+
 import Text from '../components/Text';
 
 export default function IndexPage() {
   return (
-    <Text text="Home" />
+    <div>
+      <Text text="HomePage. Hello, world!" />
+      <Link to="/info">Go to InfoPage</Link>
+    </div>
   );
 }
