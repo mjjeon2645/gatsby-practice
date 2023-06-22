@@ -16,3 +16,12 @@ exports.createPages = async ({ actions }) => {
     defer: true,
   })
 }
+
+exports.onCreateBabelConfig = ({ actions }) => {
+  actions.setBabelPlugin({
+    name: '@babel/plugin-transform-react-jsx',
+    options: {
+      runtime: 'automatic',
+    },
+  });
+};
