@@ -26,6 +26,11 @@ const GlobalStyle = createGlobalStyle`
       word-break: keep-all;
     }
   }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
 `;
 
 export default GlobalStyle;
