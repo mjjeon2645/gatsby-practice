@@ -3,6 +3,7 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 
 import { GatsbyImage } from 'gatsby-plugin-image';
+
 import { PostFrontmatterType } from '../../types';
 
 type PostItemProps = PostFrontmatterType & { link: string }
