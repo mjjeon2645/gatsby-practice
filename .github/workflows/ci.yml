@@ -23,6 +23,7 @@ jobs:
         run: npm run lint
       - name: Check
         run: npm run check
+      - name: Run unit tests
+        run: npx jest --verbose --coverage
       - name: Build
-        run: |
-          npm run build
+        run: npm run build
